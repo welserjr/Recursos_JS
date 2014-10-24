@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<p id="hour"></p>
+
+            <script type="text/javascript" language="javascript">
+            MostrarFecha();
+            function MostrarFecha() {
+                
+                var nombres_dias = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado")
+                var nombres_meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+
+                fecha_actual = new Date()
+
+                sec = fecha_actual.getSeconds();
+                min = fecha_actual.getMinutes();
+                hour = fecha_actual.getHours();
+
+                var hora = hour + ":" + min + ":" + sec;
+
+                dia_mes = fecha_actual.getDate();
+                dia_semana = fecha_actual.getDay();
+                mes = fecha_actual.getMonth() + 1;
+                anio = fecha_actual.getFullYear();
+
+                //document.write(nombres_dias[dia_semana] + ", " + dia_mes + " de " + nombres_meses[mes - 1] + " de " + anio)
+                var fecha = nombres_dias[dia_semana] + ", " + dia_mes + " de " + nombres_meses[mes - 1] + " de " + anio;
+                alert(fecha);
+                alert(fecha_actual);
+                alert(hora);
+
+                document.getElementById('hour').innerHTML = fecha + " - " + hora ; 
+            }
+            
+</script>
+</body>
+</html>
